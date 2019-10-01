@@ -1,12 +1,7 @@
 package AtividadeIIJava;
 import javax.swing.*;
 import java.util.Arrays; 
-/*
- leer 50 alturas idades e sexos e dar a:
- A) Maior Altura e menor altura DONE
- B) media de alturas das mulheres DONE
- C) Idade da mulher mais nova e homem mais velho;
- */
+
 
 public class Atividade03 {
     

@@ -1,15 +1,6 @@
 package AtividadeIIJava;
 import javax.swing.*;
 
-/*
-Ler 2 notas de 6 alunos;
-
-F) Media da classe
-
-2 linhas -> notas
-6 colunas -> alunos
-*/
-
 
 public class Atividade02 {
     
@@ -59,7 +50,6 @@ public class Atividade02 {
     public static void main(String[] args){
         double [][] arrayAlunos = new double[2][7];
         String aux;
-        
         
         try{
             for(int coluna = 1; coluna <= 6;coluna++){

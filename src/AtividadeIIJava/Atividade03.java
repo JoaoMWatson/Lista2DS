@@ -9,7 +9,6 @@ public class Atividade03 {
         double maisNova = 0;
         
         Arrays.sort(array);
-        
         maisNova = array[0][1];
         
         return maisNova;
@@ -55,7 +54,7 @@ public class Atividade03 {
                 acum += array[linha][1];
             }
         }
-        media = acum / 49; // substituir para 49
+        media = acum / 49;
         return media;
     }
 
@@ -68,7 +67,7 @@ public class Atividade03 {
             JOptionPane.showMessageDialog(null, "Bem vindo!!");
 
             for (int linha = 1; linha <= 50; linha++) {
-                
+
                 aux = JOptionPane.showInputDialog(null, "Por favor, de a sua idade");
                 arrayEntradas[linha][0] = Integer.parseInt(aux);
 

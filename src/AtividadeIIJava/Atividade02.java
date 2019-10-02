@@ -10,40 +10,41 @@ public class Atividade02 {
         double media = 0, acumMedia = 0, mediaClasse = 0;
         int i = 0, aprovados = 0, reprovados = 0, exame = 0;
         
-        for(int coluna = 1;coluna <= 6;coluna++){
-            media = array[0][coluna]+array[1][coluna];
-            media /= 2;
-            arrayMedia[i] = media;
-            i++;
+        for(int coluna = 1;coluna < 7;coluna++){
+            arrayMedia[i] = (array[0][coluna] + array[1][coluna]) / 2;
+            
             if (arrayMedia[i] < 3.0){
                 arrayStatus[i] = "reprovado";
                 reprovados++;
             }
-            if (arrayMedia[i] <= 7.0){ 
+            if (arrayMedia[i] >= 3.0 && arrayMedia[i] < 7.0){ 
                 arrayStatus[i] = "exame";
                 exame++;
             }
-            if (arrayMedia[i] > 7.0){ 
+            if (arrayMedia[i] >= 7.0){
                 arrayStatus[i] = "aprovado";
                 aprovados++;
+               acumMedia += arrayMedia[i];
             }
-            acumMedia = media;
+            
+            i++;
         }
+        
         mediaClasse = acumMedia / 6;
-        JOptionPane.showMessageDialog(null, "SituaÃ§Ã£o academica por aluno: "
-                +"1 = "+arrayMedia[1]+" "+arrayStatus[1]
-                +"2 = "+arrayMedia[2]+" "+arrayStatus[2]
-                +"3 = "+arrayMedia[3]+" "+arrayStatus[3]
-                +"4 = "+arrayMedia[4]+" "+arrayStatus[4]
-                +"5 = "+arrayMedia[5]+" "+arrayStatus[5]
-                +"6 = "+arrayMedia[6]+" "+arrayStatus[6]);
+        JOptionPane.showMessageDialog(null, "Situação academica por aluno: "
+                +"\n1 = "+arrayMedia[0]+" "+arrayStatus[0]
+                +"\n2 = "+arrayMedia[1]+" "+arrayStatus[1]
+                +"\n3 = "+arrayMedia[2]+" "+arrayStatus[2]
+                +"\n4 = "+arrayMedia[3]+" "+arrayStatus[3]
+                +"\n5 = "+arrayMedia[4]+" "+arrayStatus[4]
+                +"\n6 = "+arrayMedia[5]+" "+arrayStatus[5]);
         
         JOptionPane.showMessageDialog(null, "Total de alunos "
-                + "\nReprovados: "+reprovados+
+                +"\nReprovados: "+reprovados+
                 "\nEm exame: "+exame+
                 "\nAprovados: "+aprovados);
         
-        JOptionPane.showMessageDialog(null, "A media da turma Ã©: "+mediaClasse);
+        JOptionPane.showMessageDialog(null, "A media da turma é: "+mediaClasse);
         
     }
     
@@ -52,7 +53,7 @@ public class Atividade02 {
         String aux;
         
         try{
-            for(int coluna = 1; coluna <= 6;coluna++){
+            for(int coluna = 1; coluna < 7;coluna++){
                 aux = JOptionPane.showInputDialog(null, "Por favor, de a primeira"
                     + " nota do aluno "+coluna);
                 aux = aux.replace(",", ".");

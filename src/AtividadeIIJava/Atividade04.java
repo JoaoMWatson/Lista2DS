@@ -13,23 +13,29 @@ import javax.swing.*;
 public class Atividade04 {
 	public static void main(String[] args) {
 		int totalLugares = 5, mesa = 1, quantLugares = 0;
+		boolean mesasReservadas [] = new boolean [41]; 
 		String aux;
 
 		JOptionPane.showMessageDialog(null, "Bem vindo!!");
 
-		do {
+		while (mesa != 0 || totalLugares != 0);{
 			try {
 
-				int i = 0;
 				aux = JOptionPane.showInputDialog(null,
 						"Olá, por favor, qual a mesa  que você deseja?" + 
 						"\nPara sair digite '0'");
 				mesa = Integer.parseInt(aux);
-
+				if(mesasReservadas[mesa] == true) { 
+					JOptionPane.showMessageDialog(null, "Mesa oculpada");
+			}else {
+				mesasReservadas[mesa] = true;
+			}
 				aux = JOptionPane.showInputDialog(null, "Por favor, quantos lugares você deseja?");
 				quantLugares = Integer.parseInt(aux);
 
 				totalLugares -= quantLugares;
+				
+				JOptionPane.showMessageDialog(null, "Reserva efetuada com sucesso!");
 
 			} catch (NumberFormatException error) {
 				JOptionPane.showMessageDialog(null,
@@ -40,9 +46,13 @@ public class Atividade04 {
 				JOptionPane.showMessageDialog(null, "Obrigado por utilizar nosso programa!!");
 
 			} catch (ArrayIndexOutOfBoundsException error) {
-				JOptionPane.showMessageDialog(null, "Mesa inexistente. Mesas enumeradas de 0 a 40");
+				JOptionPane.showMessageDialog(null, "Mesa inexistente. Mesas enumeradas de 1 a 40");
 			}
-		}while (mesa != 0 && totalLugares != 0);
+		}
 		JOptionPane.showMessageDialog(null,"Obrigado por utilizar!");
 	}
 }
+
+
+
+
